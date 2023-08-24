@@ -1,5 +1,5 @@
 export function Box () {
   return (
-    <p>1</p>
+    <div className="w-48 h-48 bg-black rounded-3xl"></div>
   )
 }
