@@ -8,7 +8,34 @@ export default function Home() {
 
   const [atualizar, setAtualizar] = useState(true)
 
-  const [valores, setValores] = useState( [{}, [{}, {}, {}, {}, {}]] )
+  const [valores, setValores] = useState( [{
+    red: 0,
+    green: 0,
+    blue: 0,
+  }, [{
+    red: 255,
+    green: 255,
+    blue: 255,
+  }, {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }, {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }, {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }, {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }]] )
+
+
+  
 
   useEffect(() => {
     function gerarNumero () {
@@ -20,12 +47,31 @@ export default function Home() {
       red: gerarNumero(),
       green: gerarNumero(),
       blue: gerarNumero(),
-    }, [{}, {}, {}, {}, {}]] )
+    }, [
+      {
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
+    }, {
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
+    }, {
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
+    }, {
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
+    }, {
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
+    }
+  ]] )
+
   },[atualizar])
-
-  
-
-  
 
 
   return (
