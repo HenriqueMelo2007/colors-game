@@ -8,19 +8,19 @@ export default function Home() {
 
   const [atualizar, setAtualizar] = useState(true)
 
-  const [red, setRed] = useState(0)
-  const [green, setGreen] = useState(0)
-  const [blue, setBlue] = useState(0)
+  const [valores, setValores] = useState( [{}, [{}, {}, {}, {}, {}]] )
 
   useEffect(() => {
     function gerarNumero () {
       let numeroAleatorio = parseInt(Math.random() * 256)
       return numeroAleatorio
     }
-  
-    setRed(() => gerarNumero())
-    setGreen(() => gerarNumero())
-    setBlue(() => gerarNumero())
+
+    setValores( [{
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
+    }, [{}, {}, {}, {}, {}]] )
   },[atualizar])
 
   
@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header red={red} green={green} blue={blue} atualizar={() => setAtualizar(prevAtualizar => !prevAtualizar)}/>
+      <Header red={valores[0].red} green={valores[0].green} blue={valores[0].blue} atualizar={() => setAtualizar(prevAtualizar => !prevAtualizar)}/>
       <div className='bg-blue-900 w-full flex justify-center mt-10'>
         <Box></Box>
       </div>
