@@ -35,12 +35,20 @@ export default function Home() {
   }] )
 
 
+  let n = 8
+  const [numeros, setNumeros] = useState([1, 2, 3, 4, 5, 6])
+  for (let i = 1; i <= 6; i++) {
 
+    
+    
+    
+    n--
+    let aleatorio = parseInt( Math.random() * n )
+
+    console.log('isto é aleatório', aleatorio)
+  }
   const [caixas, setCaixas] = useState([])
 
-  for ( const item of valores) {
-    console.log(item)
-  }
 
 
 
