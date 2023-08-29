@@ -12,10 +12,6 @@ export default function Home() {
     red: 0,
     green: 0,
     blue: 0,
-  }, [{
-    red: 255,
-    green: 255,
-    blue: 255,
   }, {
     red: 255,
     green: 255,
@@ -32,46 +28,60 @@ export default function Home() {
     red: 255,
     green: 255,
     blue: 255,
-  }]] )
+  }, {
+    red: 255,
+    green: 255,
+    blue: 255,
+  }] )
 
 
-  
 
-  useEffect(() => {
-    function gerarNumero () {
-      let numeroAleatorio = parseInt(Math.random() * 256)
-      return numeroAleatorio
-    }
+  const [caixas, setCaixas] = useState([])
 
-    setValores( [{
-      red: gerarNumero(),
-      green: gerarNumero(),
-      blue: gerarNumero(),
-    }, [
-      {
-      red: gerarNumero(),
-      green: gerarNumero(),
-      blue: gerarNumero(),
-    }, {
-      red: gerarNumero(),
-      green: gerarNumero(),
-      blue: gerarNumero(),
-    }, {
-      red: gerarNumero(),
-      green: gerarNumero(),
-      blue: gerarNumero(),
-    }, {
-      red: gerarNumero(),
-      green: gerarNumero(),
-      blue: gerarNumero(),
-    }, {
-      red: gerarNumero(),
-      green: gerarNumero(),
-      blue: gerarNumero(),
-    }
-  ]] )
+  for ( const item of valores) {
+    console.log(item)
+  }
 
-  },[atualizar])
+
+
+
+useEffect(() => {
+
+  function gerarNumero () {
+    let numeroAleatorio = parseInt(Math.random() * 256)
+    return numeroAleatorio
+  }
+
+  setValores( [{
+    red: gerarNumero(),
+    green: gerarNumero(),
+    blue: gerarNumero(),
+  }, 
+    {
+    red: gerarNumero(),
+    green: gerarNumero(),
+    blue: gerarNumero(),
+  }, {
+    red: gerarNumero(),
+    green: gerarNumero(),
+    blue: gerarNumero(),
+  }, {
+    red: gerarNumero(),
+    green: gerarNumero(),
+    blue: gerarNumero(),
+  }, {
+    red: gerarNumero(),
+    green: gerarNumero(),
+    blue: gerarNumero(),
+  }, {
+    red: gerarNumero(),
+    green: gerarNumero(),
+    blue: gerarNumero(),
+  }
+] )
+    
+
+},[atualizar])
 
 
   return (
