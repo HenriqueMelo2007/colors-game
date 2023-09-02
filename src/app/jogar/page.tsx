@@ -6,40 +6,54 @@ import { useState } from 'react'
 
 export default function Jogar() {
 
+  function gerarNumero() {
+    let numeroAleatorio = parseInt(Math.random() * 256)
+    return numeroAleatorio
+  }
+
   const [valores, setValores] = useState([
     {
-      red: 0,
-      green: 0,
-      blue: 0
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
     },
     {
-      red: 255,
-      green: 255,
-      blue: 255
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
     },
     {
-      red: 255,
-      green: 255,
-      blue: 255
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
     },
     {
-      red: 255,
-      green: 255,
-      blue: 255
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
     },
     {
-      red: 255,
-      green: 255,
-      blue: 255
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
     },
     {
-      red: 255,
-      green: 255,
-      blue: 255
+      red: gerarNumero(),
+      green: gerarNumero(),
+      blue: gerarNumero(),
     }
   ])
 
+  const [valorCorreto, setValorCorreto] = useState({
+    red: valores[0].red,
+    green: valores[0].green,
+    blue: valores[0].blue,
+  })
+  
+
+  console.log(valorCorreto)
   console.log(valores)
+
 
   let n = 8
   const [numeros, setNumeros] = useState([1, 2, 3, 4, 5, 6])
@@ -52,26 +66,28 @@ export default function Jogar() {
   const [caixas, setCaixas] = useState([])
 
   
-  function gerarNumero() {
-    let numeroAleatorio = parseInt(Math.random() * 256)
-    return numeroAleatorio
-  }
+  
 
-  function atualizarValores() {
+function atualizarValores() {
     const novosValores = valores.map(i => ({
       red: gerarNumero(),
       green: gerarNumero(),
       blue: gerarNumero(),
     }))
     setValores(novosValores)
+    setValorCorreto({
+      red: novosValores[0].red,
+      green: novosValores[0].green,
+      blue: novosValores[0].blue,
+    })
   }
 
     return (
     <div>
       <Header
-        red={valores[0].red}
-        green={valores[0].green}
-        blue={valores[0].blue}
+        red={valorCorreto.red}
+        green={valorCorreto.green}
+        blue={valorCorreto.blue}
         atualizar={() => atualizarValores()}
       />
       <div className="bg-blue-900 w-full flex justify-center mt-10">
