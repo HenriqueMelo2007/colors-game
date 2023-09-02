@@ -1,103 +1,12 @@
-'use client'
+import Link from "next/link"
 
-import { Header } from '@/components/header'
-import { Box } from '@/components/box'
-import { useEffect, useState } from 'react'
-
-export default function Home() {
-
-  const [atualizar, setAtualizar] = useState(true)
-
-  const [valores, setValores] = useState( [{
-    red: 0,
-    green: 0,
-    blue: 0,
-  }, {
-    red: 255,
-    green: 255,
-    blue: 255,
-  }, {
-    red: 255,
-    green: 255,
-    blue: 255,
-  }, {
-    red: 255,
-    green: 255,
-    blue: 255,
-  }, {
-    red: 255,
-    green: 255,
-    blue: 255,
-  }, {
-    red: 255,
-    green: 255,
-    blue: 255,
-  }] )
-
-
-  let n = 8
-  const [numeros, setNumeros] = useState([1, 2, 3, 4, 5, 6])
-  for (let i = 1; i <= 6; i++) {
-
-    
-    
-    
-    n--
-    let aleatorio = parseInt( Math.random() * n )
-
-    console.log('isto é aleatório', aleatorio)
-  }
-  const [caixas, setCaixas] = useState([])
-
-
-
-
-
-useEffect(() => {
-
-  function gerarNumero () {
-    let numeroAleatorio = parseInt(Math.random() * 256)
-    return numeroAleatorio
-  }
-
-  setValores( [{
-    red: gerarNumero(),
-    green: gerarNumero(),
-    blue: gerarNumero(),
-  }, 
-    {
-    red: gerarNumero(),
-    green: gerarNumero(),
-    blue: gerarNumero(),
-  }, {
-    red: gerarNumero(),
-    green: gerarNumero(),
-    blue: gerarNumero(),
-  }, {
-    red: gerarNumero(),
-    green: gerarNumero(),
-    blue: gerarNumero(),
-  }, {
-    red: gerarNumero(),
-    green: gerarNumero(),
-    blue: gerarNumero(),
-  }, {
-    red: gerarNumero(),
-    green: gerarNumero(),
-    blue: gerarNumero(),
-  }
-] )
-    
-
-},[atualizar])
-
-
+export default function Home () {
   return (
-    <div>
-      <Header red={valores[0].red} green={valores[0].green} blue={valores[0].blue} atualizar={() => setAtualizar(prevAtualizar => !prevAtualizar)}/>
-      <div className='bg-blue-900 w-full flex justify-center mt-10'>
-        <Box></Box>
-      </div>
+    <div className="w-screen h-screen flex items-center justify-center flex-col px-80">
+        <p className="text-green-400 text-2xl m-6">Bem-vindo ao Jogo das Cores RGB!
+           O desafio é simples: um código RGB será gerado, e você terá que adivinhar qual cor corresponde a esse código. As cores são representadas por combinações de vermelho (R), verde (G) e azul (B). Você verá seis opções de cores na tela, e sua missão é escolher a cor correta que corresponde ao código RGB mostrado.
+           Teste sua habilidade em identificar cores e divirta-se neste emocionante jogo de desafio visual!</p>
+        <Link href='/jogar' className="bg-green-400 rounded-3xl py-2 px-16 text-xl">Jogar</Link>
     </div>
   )
 }
