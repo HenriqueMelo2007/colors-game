@@ -49,7 +49,7 @@ export default function Jogar() {
     green: valores[0].green,
     blue: valores[0].blue,
   })
-  
+
 
   console.log(valorCorreto)
   console.log(valores)
@@ -88,7 +88,7 @@ function atualizarValores() {
         red={valorCorreto.red}
         green={valorCorreto.green}
         blue={valorCorreto.blue}
-        atualizar={() => atualizarValores()}
+        atualizar={atualizarValores}
       />
       <div className="bg-blue-900 w-full flex justify-center mt-10">
         <Box></Box>
