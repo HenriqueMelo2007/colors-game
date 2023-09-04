@@ -73,7 +73,7 @@ function atualizarValores() {
 
 
   let n = 7
-  const valoresFor = [...valores]
+  const valoresFor = [...novosValores]
 
   let valoresMisturados = []
   
@@ -86,10 +86,9 @@ function atualizarValores() {
     const valorAleatorio = valoresFor.splice(aleatorio, 1)
     valoresMisturados = [...valoresMisturados, ...valorAleatorio]
     setValoresMisturadosState(valoresMisturados)
+    console.log(valoresMisturados)
   }
   }
-
-  console.log('oiiii')
 
     return (
     <div>

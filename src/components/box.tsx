@@ -25,8 +25,8 @@ export function Box ({red, green, blue, valorCorreto, setResposta}:BoxProps) {
     if (red == valorCorreto.red && green == valorCorreto.green && blue == valorCorreto.blue) {
       setResposta('Correto! Parabéns')
     } else {
-      setResposta('Errado! Tente novamente')
       setDisplay(2)
+      setResposta('Errado! Tente novamente')  
     }
   }
 
