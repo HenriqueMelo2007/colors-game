@@ -17,7 +17,9 @@ export function Header ({red, green, blue, atualizar, resposta}: propsHeader) {
       <h1 className="text-6xl">rgb ({red}, {green}, {blue} )</h1>
       <div className="shadow-lg bg-white w-full h-1/3 flex justify-center items-center gap-60">
         <Button atualizar={atualizar}></Button>
-        <p className="text-black text-lg">{resposta}</p>
+        <div className="w-1/4">
+          <p className="text-black text-lg">{resposta}</p>
+        </div>
       </div>
     </header>
   )
