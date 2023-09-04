@@ -51,20 +51,24 @@ export default function Jogar() {
   })
 
 
-  console.log(valorCorreto)
-  console.log(valores)
 
 
-  let n = 8
-  const [numeros, setNumeros] = useState([1, 2, 3, 4, 5, 6])
+  let n = 7
+  const valoresFor = [...valores]
+
+  let valoresMisturados = []
+  
+
   for (let i = 1; i <= 6; i++) {
+
     n--
     let aleatorio = parseInt(Math.random() * n)
 
-    console.log('isto é aleatório', aleatorio)
-  }
-  const [caixas, setCaixas] = useState([])
 
+
+    const valorAleatorio = valoresFor.splice(aleatorio, 1)
+    valoresMisturados = [...valoresMisturados, ...valorAleatorio]
+  }
   
   
 
@@ -90,8 +94,8 @@ function atualizarValores() {
         blue={valorCorreto.blue}
         atualizar={atualizarValores}
       />
-      <div className="bg-blue-900 w-full flex justify-center mt-10">
-        <Box></Box>
+      <div className="w-full flex justify-center mt-10">
+        {valoresMisturados.length == 6 ? valoresMisturados.map(i => <Box red={i.red} green={i.green} blue={i.blue}></Box>) : 'oi'}
       </div>
     </div>
   )

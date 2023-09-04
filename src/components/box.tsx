@@ -1,7 +1,30 @@
 'use client'
 
-export function Box () {
+import { useEffect, useState } from "react"
+
+interface BoxProps {
+  red: number,
+  green: number,
+  blue: number,
+}
+
+export function Box ({red, green, blue}:BoxProps) {
+
+  const [redState, setRedState] = useState(red)
+  const [display, setDisplay] = useState(true)
+
+  useEffect(() => {
+    setDisplay(true)
+  }, [red])
+
+  
+
+  function displayNone () {
+    setDisplay(false)
+  }
+
+  
   return (
-    <div className="w-48 h-48 bg-black rounded-3xl"></div>
+    <div className={display ? 'h-48 w-48 rounded-3xl hover:cursor-pointer' : 'hidden'} onClick={displayNone} style={{background: `rgb(${redState}, ${green}, ${blue})`}}></div>
   )
 }
