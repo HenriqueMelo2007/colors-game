@@ -86,9 +86,10 @@ function atualizarValores() {
     const valorAleatorio = valoresFor.splice(aleatorio, 1)
     valoresMisturados = [...valoresMisturados, ...valorAleatorio]
     setValoresMisturadosState(valoresMisturados)
-    console.log(valoresMisturados)
   }
   }
+
+  const [display, setDisplay] = useState([true, true, true, true, true, true])
 
     return (
     <div>
@@ -101,7 +102,7 @@ function atualizarValores() {
       />
       
       <div className="w-full grid grid-cols-colunaResponsiva px-96 gap-x-1 justify-center mt-10">
-        {valoresMisturadosState.length == 6 ? valoresMisturadosState.map(i => <Box red={i.red} green={i.green} blue={i.blue} valorCorreto={valorCorreto} setResposta={setResposta} key={Math.random() * 9999999999999999999999999999999999999999} />) : 'Carregando...'}
+        {valoresMisturadosState.length == 6 ? valoresMisturadosState.map((i, index) => <Box displayArray={display} displayIndividual={display[index]} setDisplay={setDisplay} id={index} key={index} red={i.red} green={i.green} blue={i.blue} valorCorreto={valorCorreto} setResposta={setResposta} />) : 'Carregando...'}
       </div>
     </div>
   )
