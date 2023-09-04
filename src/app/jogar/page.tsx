@@ -52,7 +52,7 @@ export default function Jogar() {
 
   const [resposta, setResposta] = useState('')
 
-  const [valoresMisturadosState, setValoresMisturadosState] = useState([])
+  const [valoresMisturadosState, setValoresMisturadosState] = useState([...valores])
 
   
   
