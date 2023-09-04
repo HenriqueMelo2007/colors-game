@@ -6,25 +6,32 @@ interface BoxProps {
   red: number,
   green: number,
   blue: number,
+  valorCorreto: any,
+  setResposta: any,
 }
 
-export function Box ({red, green, blue}:BoxProps) {
+export function Box ({red, green, blue, valorCorreto, setResposta}:BoxProps) {
 
-  const [redState, setRedState] = useState(red)
-  const [display, setDisplay] = useState(true)
+  const [display, setDisplay] = useState(1)
 
   useEffect(() => {
-    setDisplay(true)
-  }, [red])
+    setDisplay(1)
+  }, [red, green, blue])
 
   
 
-  function displayNone () {
-    setDisplay(false)
+  function clickBox () {
+
+    if (red == valorCorreto.red && green == valorCorreto.green && blue == valorCorreto.blue) {
+      setResposta('Correto! Parabéns')
+    } else {
+      setResposta('Errado! Tente novamente')
+      setDisplay(2)
+    }
   }
 
   
   return (
-    <div className={display ? 'h-48 w-48 rounded-3xl hover:cursor-pointer mt-5' : 'invisible'} onClick={displayNone} style={{background: `rgb(${redState}, ${green}, ${blue})`}}></div>
+    <div className={display == 1 ? 'h-48 w-48 rounded-3xl hover:cursor-pointer mt-5' : 'h-48 w-48 rounded-3xl mt-5 invisible'} onClick={clickBox} style={{background: `rgb(${red}, ${green}, ${blue})`}}></div>
   )
 }

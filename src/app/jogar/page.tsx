@@ -52,21 +52,9 @@ export default function Jogar() {
 
   const [resposta, setResposta] = useState('')
 
+  const [valoresMisturadosState, setValoresMisturadosState] = useState([])
 
-  let n = 7
-  const valoresFor = [...valores]
-
-  let valoresMisturados = []
   
-
-  for (let i = 1; i <= 6; i++) {
-
-    n--
-    let aleatorio = parseInt(Math.random() * n)
-
-    const valorAleatorio = valoresFor.splice(aleatorio, 1)
-    valoresMisturados = [...valoresMisturados, ...valorAleatorio]
-  }
   
 
 function atualizarValores() {
@@ -81,7 +69,27 @@ function atualizarValores() {
       green: novosValores[0].green,
       blue: novosValores[0].blue,
     })
+
+
+
+  let n = 7
+  const valoresFor = [...valores]
+
+  let valoresMisturados = []
+  
+
+  for (let i = 1; i <= 6; i++) {
+
+    n--
+    let aleatorio = parseInt(Math.random() * n)
+
+    const valorAleatorio = valoresFor.splice(aleatorio, 1)
+    valoresMisturados = [...valoresMisturados, ...valorAleatorio]
+    setValoresMisturadosState(valoresMisturados)
   }
+  }
+
+  console.log('oiiii')
 
     return (
     <div>
@@ -94,7 +102,7 @@ function atualizarValores() {
       />
       
       <div className="w-full grid grid-cols-colunaResponsiva px-96 gap-x-1 justify-center mt-10">
-        {valoresMisturados.length == 6 ? valoresMisturados.map(i => <Box red={i.red} green={i.green} blue={i.blue}></Box>) : 'oi'}
+        {valoresMisturadosState.length == 6 ? valoresMisturadosState.map(i => <Box red={i.red} green={i.green} blue={i.blue} valorCorreto={valorCorreto} setResposta={setResposta} key={Math.random() * 9999999999999999999999999999999999999999} />) : 'Carregando...'}
       </div>
     </div>
   )
