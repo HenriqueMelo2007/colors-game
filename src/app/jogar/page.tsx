@@ -51,8 +51,6 @@ export default function Jogar() {
   })
 
 
-
-
   let n = 7
   const valoresFor = [...valores]
 
@@ -64,12 +62,9 @@ export default function Jogar() {
     n--
     let aleatorio = parseInt(Math.random() * n)
 
-
-
     const valorAleatorio = valoresFor.splice(aleatorio, 1)
     valoresMisturados = [...valoresMisturados, ...valorAleatorio]
   }
-  
   
 
 function atualizarValores() {
@@ -94,8 +89,9 @@ function atualizarValores() {
         blue={valorCorreto.blue}
         atualizar={atualizarValores}
       />
-      <div className="w-full flex justify-center mt-10">
-        {valoresMisturados.length == 6 ? valoresMisturados.map(i => <Box red={i.red} green={i.green} blue={i.blue}></Box>) : 'oi'}
+      
+      <div className="w-full grid grid-cols-colunaResponsiva px-96 gap-x-1 justify-center mt-10">
+        {valoresMisturados.length == 6 ? valoresMisturados.map(i => <Box key={gerarNumero()} red={i.red} green={i.green} blue={i.blue}></Box>) : 'oi'}
       </div>
     </div>
   )

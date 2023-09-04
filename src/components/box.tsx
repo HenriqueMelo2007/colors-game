@@ -25,6 +25,6 @@ export function Box ({red, green, blue}:BoxProps) {
 
   
   return (
-    <div className={display ? 'h-48 w-48 rounded-3xl hover:cursor-pointer' : 'hidden'} onClick={displayNone} style={{background: `rgb(${redState}, ${green}, ${blue})`}}></div>
+    <div className={display ? 'h-48 w-48 rounded-3xl hover:cursor-pointer mt-5' : 'invisible'} onClick={displayNone} style={{background: `rgb(${redState}, ${green}, ${blue})`}}></div>
   )
 }
