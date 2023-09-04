@@ -70,6 +70,8 @@ function atualizarValores() {
       blue: novosValores[0].blue,
     })
 
+    setResposta('')
+
 
 
   let n = 7
