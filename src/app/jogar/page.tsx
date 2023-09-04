@@ -104,7 +104,7 @@ function atualizarValores() {
       />
       
       <div className="w-full grid grid-cols-colunaResponsiva px-96 gap-x-1 justify-center mt-10">
-        {valoresMisturadosState.length == 6 ? valoresMisturadosState.map((i, index) => <Box displayArray={display} displayIndividual={display[index]} setDisplay={setDisplay} id={index} key={index} red={i.red} green={i.green} blue={i.blue} valorCorreto={valorCorreto} setResposta={setResposta} />) : 'Carregando...'}
+        {valoresMisturadosState.length == 6 ? valoresMisturadosState.map((i, index) => <Box displayArray={display} displayIndividual={display[index]} setDisplay={setDisplay} id={index} key={index} red={i.red} green={i.green} blue={i.blue} valorCorreto={valorCorreto} setResposta={setResposta} setValoresMisturadosState={setValoresMisturadosState} valoresMisturadosState={valoresMisturadosState} />) : 'Carregando...'}
       </div>
     </div>
   )

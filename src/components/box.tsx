@@ -11,15 +11,26 @@ interface BoxProps {
   id: number,
   displayIndividual: any,
   displayArray: any,
-  setDisplay: any
+  setDisplay: any,
+  setValoresMisturadosState: any,
+  valoresMisturadosState: any,
 }
 
-export function Box ({red, green, blue, valorCorreto, setResposta, id, displayIndividual, displayArray, setDisplay}:BoxProps) {
+export function Box ({red, green, blue, valorCorreto, setResposta, id, displayIndividual, displayArray, setDisplay, setValoresMisturadosState, valoresMisturadosState}:BoxProps) {
   
 
   useEffect(() => {
     setDisplay([true, true, true, true, true, true])
   }, [red, green, blue, setDisplay])
+
+  function opcaoCorreta () {
+    const novosValores = valoresMisturadosState.map(i => ({
+      red: red,
+      green: green,
+      blue: blue,
+    }))
+    setValoresMisturadosState(novosValores)
+  }
 
   
 
@@ -27,6 +38,7 @@ export function Box ({red, green, blue, valorCorreto, setResposta, id, displayIn
 
     if (red == valorCorreto.red && green == valorCorreto.green && blue == valorCorreto.blue) {
       setResposta('Correto! Parabéns')
+      opcaoCorreta()
     } else {
       setResposta('Errado! Tente novamente')  
       toggleDisplay(id)
