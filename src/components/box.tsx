@@ -47,12 +47,12 @@ export function Box ({red, green, blue, valorCorreto, setResposta, id, displayIn
 
   function toggleDisplay (id) {
     const newDisplay = [...displayArray]; 
-    newDisplay[id] = !newDisplay[id]; 
+    newDisplay[id] = false; 
     setDisplay(newDisplay); 
   };
 
   
   return (
-    <div className={displayIndividual == true ? 'h-48 w-48 rounded-3xl hover:cursor-pointer mt-5' : 'h-48 w-48 rounded-3xl mt-5 invisible'} onClick={() => clickBox()} style={{background: `rgb(${red}, ${green}, ${blue})`}}></div>
+    <div className={displayIndividual == true ? 'h-48 w-48 rounded-3xl hover:cursor-pointer mt-5 transition duration-700' : 'h-48 w-48 rounded-3xl mt-5 opacity-0 transition duration-1000'} onClick={() => clickBox()} style={{background: `rgb(${red}, ${green}, ${blue})`}}></div>
   )
 }
