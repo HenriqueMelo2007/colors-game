@@ -50,6 +50,8 @@ export default function Jogar() {
     blue: valores[0].blue,
   })
 
+  const [resposta, setResposta] = useState('')
+
 
   let n = 7
   const valoresFor = [...valores]
@@ -88,10 +90,11 @@ function atualizarValores() {
         green={valorCorreto.green}
         blue={valorCorreto.blue}
         atualizar={atualizarValores}
+        resposta={resposta}
       />
       
       <div className="w-full grid grid-cols-colunaResponsiva px-96 gap-x-1 justify-center mt-10">
-        {valoresMisturados.length == 6 ? valoresMisturados.map(i => <Box key={gerarNumero()} red={i.red} green={i.green} blue={i.blue}></Box>) : 'oi'}
+        {valoresMisturados.length == 6 ? valoresMisturados.map(i => <Box red={i.red} green={i.green} blue={i.blue}></Box>) : 'oi'}
       </div>
     </div>
   )
