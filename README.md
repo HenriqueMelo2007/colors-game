@@ -16,15 +16,15 @@ To clone the project repository and run it on your local machine, follow the ins
 
 ## DEFAULT
 
-![preview](public/readme-image-1.png.png)
+![preview](public/readme-image-1.png)
 
 ## WRONG ANSWERS
 
-![preview](public/readme-image-2.png.png)
+![preview](public/readme-image-2.png)
 
 ## CORRECT ANSWERS
 
-![preview](public/readme-image-3.png.png)
+![preview](public/readme-image-3.png)
 
 
 ## Technologies Used
