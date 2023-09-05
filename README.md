@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# COLORS GAME
 
-## Getting Started
+The challenge is simple: an RGB code will be generated, and you'll have to guess which one corresponds to that code. Colors are represented by imitations of red (R), green (G) and blue (B). You'll see six color options on the screen, and your mission is to choose the correct color that matches the displayed RGB code. Test your ability to identify cores and have fun in this exciting visual challenge game!
 
-First, run the development server:
+## How to Clone and Run
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+To clone the project repository and run it on your local machine, follow the instructions below:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository using the command `git clone <repository URL>`.
+2. Navigate to the project directory: `cd login-registrar-next`.
+3. Install the dependencies using the command `npm install`.
+4. Run the application using the command `npm run dev`.
+5. Access the application in your browser at `http://localhost`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Screens:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## DEFAULT
 
-## Learn More
+![preview](public/readme-image-1.png.png)
 
-To learn more about Next.js, take a look at the following resources:
+## WRONG ANSWERS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![preview](public/readme-image-2.png.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## CORRECT ANSWERS
 
-## Deploy on Vercel
+![preview](public/readme-image-3.png.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies Used
+
+- NextJS
+- Tailwind
+- TypeScript
